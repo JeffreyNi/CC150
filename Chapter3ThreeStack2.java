@@ -4,8 +4,31 @@
  * Describe how you could use a single array to implement
  * three stack.
  * 
- * This implementation divide the array into three equal parts 
- * and allow the individual stack to grow in that limited space.
+ * This implementation, we sequentially allocate space to 
+ * the stakcs and we link new blocks to the previous block. 
+ * This means any new element in a stack keeps a pointer to
+ * the previous top element of that particular stack.
+ *
+ * In this implemetation, we face a problem of unused space. 
+ * For example, if a stack deletes some of its elements, the 
+ * deleted elements may not necessarily appear at the end of
+ * the array. So, in that case, we would not be able to use
+ * those newly freed spaces.
+ * 
+ * To overcome this deficiency, we can maintain a free list 
+ * and the whole array space would be given initially to the
+ * free list. For every insertion, we would delete an entry 
+ * from the free list. In case of deletion, we would simply
+ * add the index of the free cell to the free list.
+ *
+ * In this implementation, we would be able to have flexibility
+ * in terms of variable space utilization but we would need to 
+ * increase the space complexity.
+ *
+ * This implementation is somewhat like what we would do in
+ * the implementation of kernel memory space.
+ *
+ * @author Jiafeng Ni
  * 
  ********************************************************/
 
