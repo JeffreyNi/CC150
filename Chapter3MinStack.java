@@ -34,4 +34,6 @@ public class Chapter3MinStack extends Stack<NodeWithMin>{
 	if (this.isEmpty()) { return Integer.MAX_VALUE; }
 	else                { return peek().min; }
     }
+
+
 }

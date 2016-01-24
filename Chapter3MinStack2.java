@@ -18,23 +18,38 @@ import java.util.*;
 
 public class Chapter3MinStack2 extends Stack<Integer>{
 
-    private Stack<Integer> stack;
+    private Stack<Integer> stack; // the stack keeping track of the mins
 
     public Chapter3MinStack2() {
 	this.stack = new Stack<Integer>();
     }
 
+    /**
+     * Push a new val into the stack. It the new value is no less
+     * than the min element so far, also push it onto the min stack.
+     * @param value the new value to be pushed
+     */
     public void push(int value) {
 	if (value <= min()) {this.stack.push(value);}
 	super.push(value);
     }
 
+    /**
+     * Pop an elment out of the stack. If the value equals to the min,
+     * pop an element from min stack.
+     * @return returns the top element of the stack.
+     */
     public Integer pop() {
 	int value = super.pop();
 	if (value == min()) {stack.pop();}
 	return value;
     }
 
+    /**
+     * Returns the min value of the stack. If the stack is empty, returns
+     * max integer.
+     * @return the min element in the stack.
+     */
     public int min() {
 	if (stack.isEmpty()) { return Integer.MAX_VALUE; }
 	else                 { return stack.peek(); }
