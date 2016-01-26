@@ -22,11 +22,25 @@ public class Chapter4BalancedTree{
 	}
     }
 
+    /**
+     * Returns true if the given tree is balanced. Here a 
+     * balanced tree is defined to be a tree such that no
+     * two leaf nodes differ in distance from the root by 
+     * more than one.
+     * @param root the given tree
+     * @return true if the given tree is balanced.
+     */
     public static boolean isBalanced(TreeNode root) {
 	return getHeight(root) != -1;
     }
 
 
+    /**
+     * Return the depth of the tree. If the tree is not 
+     * balanced, return -1.
+     * @param root the given tree
+     * @return the depth of the tree
+     */
     private static int getHeight(TreeNode root) {
 	if (root == null) {return 0;}
 
