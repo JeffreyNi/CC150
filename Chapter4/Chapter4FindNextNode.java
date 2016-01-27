@@ -1,5 +1,5 @@
 /********************************************************
- * This class implements problem 4.4 in CC150.
+ * This class implements problem 4.5 in CC150.
  *
  * Write an algorithm to find the 'next' node (e.g, in-order
  * successor) of a given node in a binary search tree where
